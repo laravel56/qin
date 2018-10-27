@@ -13,6 +13,6 @@
 Route::group(['middleware'=>'AdminLogin','prefix' => config('app.project')], function () {
 	Route::view('/', 'admin/index',['project'=>config('app.project')]);
 	Route::view('/welcome', 'admin/welcome');
+	Route::post('zebra/list',"Admin\ZebraController@list");
 });
 Route::resource(config('app.project').'/login','Admin\LoginController');
-
