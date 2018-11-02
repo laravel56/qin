@@ -17,4 +17,6 @@ class Member extends Model
        return $this->belongsToMany('App\Model\Shop','shop_member','member_id','shop_id');
 
    }
+
+   
 }

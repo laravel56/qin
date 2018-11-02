@@ -10,6 +10,9 @@ use App\Model\GoodsSku;
 use App\Model\Admin;
 use App\Model\Shop;
 use App\Model\Member;
+use App\Model\Merchant;
+use App\Model\Comment;
+use App\Model\Post;
 use App\Http\Resources\UserResource;
 class ZebraController extends Controller
 {
@@ -32,14 +35,27 @@ class ZebraController extends Controller
     	// var_dump($data);
 
     	// 多对多
-		$data = Member::find(1)->index;
-    	// var_dump($data);
+		// $data = Member::find(1)->index;
+        // var_dump($data);
+        // dd($data);
+    	// 多对多（逆向）
+		// $data = Shop::find(21)->index;
+        // var_dump($data);
 
-    	
+        //获取中间表字段
+		// foreach ($data as $value) {
+  //           $a =  $value->pivot;
+  //           dd($a);
+  //       }
+        
+        //远程一对多
+        // $data = Merchant::find(1)->index;
+        // var_dump($data);
 
-
-
-        return new UserResource($data);
+        //多态关联
+        // $data = Comment::find(1)->commentable;
+        // var_dump($data);
+        // return new UserResource($data);
 
     }
 }
